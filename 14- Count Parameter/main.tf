@@ -21,5 +21,5 @@ resource "azurerm_resource_group" "example" {
 }
 
 output "created_resources" {
-  value = [for i in azurerm_resource_group.example: i.name]
+  value = [for i in azurerm_resource_group.example: i.id]
 }

@@ -1,17 +1,22 @@
 variable "my_list" {
-  type      = list(string)
+  type      = list(number)
   default   = ["1", "2", "3"]
 }
 
+
 variable "my_set" {
   type      = set(number)
-  default   = [1, 2, 3, 4, 5]
+  default   = [1, 2, 3, 4, 5 , 2]
 }
 
+
+
 variable "my_tuple" {
-  type      = tuple([string, number, string])
+  type      = tuple([number, number, number])
   default   = ["1", 2, "3"]
 }
+
+
 
 variable "my_map" {
   type      = map
@@ -45,5 +50,5 @@ output "my_map_values" {
 }
 
 output "my_object_values" {
-  value = var.my_object
+  value = "${var.my_object.names[0]} ${var.my_object.ages[0]}"
 }

@@ -1,0 +1,1 @@
+We will deploy the https://github.com/Azure-Samples/nodejs-docs-hello-world on the azure app service using terraform!

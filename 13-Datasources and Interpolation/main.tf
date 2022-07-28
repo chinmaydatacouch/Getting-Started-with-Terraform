@@ -17,6 +17,10 @@ data "azurerm_resources" "example" {
 }
 
 output "azure_resources" {
-  value = data.azurerm_resources.example.resources[0].id
+  value = data.azurerm_resources.example.resources[0].tags
+}
+
+output "azure_resource_for" {
+  value = data.azurerm_resources.example.resources
 }
 

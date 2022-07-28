@@ -1,6 +1,6 @@
 variable "my_list" {
   type      = list(string)
-  default   = ["1", "2", "3"]
+  default   = ["apple", "banana", "3"]
 }
 
 variable "my_set" {
@@ -19,22 +19,32 @@ variable "users" {
   }))
   default = {
     "chinmay" = {
-      role = "hero"
+      role = "user"
     }
     "joseph"={
         role = "admin"
+    }
+    "Ihsan" = {
+      role = "admin"
+    }
+    "Roman" = {
+      role = "user"
     }
 
   }
 }
 
 output "userbyrole" {
- value = { for name, user in var.users : user.role => name}
+ value = { for name, user in var.users : user.role => name...}
+}
+
+output "all_users" {
+ value = [ for name, user in var.users : name ]
 }
 
 
 output "forlist" {
-  value = [for i in var.my_list: parseint(i, 10)]
+  value = [for i,v in var.my_list: "${i} is ${v}"]
 }
 
 output "fortupple" {
